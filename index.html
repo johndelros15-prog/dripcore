@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DripCore - Premium Streetwear</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>DRIPCORE</h1>
+      <span>Premium Streetwear</span>
+    </div>
+    <div class="cart-icon" onclick="toggleCart()">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </div>
+  </header>
+
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li onclick="scrollToCategory('shoes')"><i class="fa-solid fa-shoe-prints"></i> Shoes</li>
+        <li onclick="scrollToCategory('tshirts')"><i class="fa-solid fa-shirt"></i> T-Shirts</li>
+        <li onclick="scrollToCategory('pants')"><i class="fa-solid fa-person-dress"></i> Pants</li>
+      </ul>
+    </aside>
+
+    <!-- Product Area -->
+    <main class="product-area">
+      <section id="shoes" class="category-section">
+        <h2>Premium Shoes</h2>
+        <div class="products-grid" id="shoes-grid"></div>
+      </section>
+
+      <section id="tshirts" class="category-section">
+        <h2>Designer T-Shirts</h2>
+        <div class="products-grid" id="tshirts-grid"></div>
+      </section>
+
+      <section id="pants" class="category-section">
+        <h2>Premium Pants</h2>
+        <div class="products-grid" id="pants-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- My Orders Button -->
+  <button class="my-orders-btn" onclick="toggleOrders()">
+    <i class="fas fa-box"></i> My Orders
+  </button>
+
+  <!-- Modals -->
+  <!-- Product Details -->
+  <div id="product-modal" class="modal">
+    <div class="modal-content product-modal">
+      <span class="close" onclick="closeProductModal()">&times;</span>
+      <div id="product-details"></div>
+    </div>
+  </div>
+
+  <!-- Cart -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content cart-modal">
+      <span class="close" onclick="toggleCart()">&times;</span>
+      <h2>Shopping Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">
+        <h3>Total: ₱<span id="cart-total">0</span></h3>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Orders -->
+  <div id="orders-modal" class="modal">
+    <div class="modal-content orders-modal">
+      <span class="close" onclick="toggleOrders()">&times;</span>
+      <h2>My Orders</h2>
+      <div id="orders-list"></div>
+    </div>
+  </div>
+
+  <!-- Payment -->
+  <div id="payment-modal" class="modal">
+    <div class="modal-content payment-modal">
+      <span class="close" onclick="closePaymentModal()">&times;</span>
+      <h2>Payment Information</h2>
+      <form id="payment-form">
+        <div class="payment-methods">
+          <label>
+            <input type="radio" name="payment" value="gcash" checked />
+            <img src="https://logos-world.net/wp-content/uploads/2021/02/GCash-Logo.png" class="payment-logo" alt="GCash">
+          </label>
+          <label>
+            <input type="radio" name="payment" value="paymaya" />
+            <img src="https://seeklogo.com/images/P/paymaya-logo-A331E7A3A8-seeklogo.com.png" class="payment-logo" alt="PayMaya">
+          </label>
+          <label>
+            <input type="radio" name="payment" value="cod" />
+            <span class="cod-text">Cash on Delivery</span>
+          </label>
+        </div>
+        <input type="text" placeholder="Full Name" required />
+        <input type="text" placeholder="Phone Number" required />
+        <input type="text" placeholder="Address" required />
+        <button type="submit" class="pay-btn">Complete Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="dp.js"></script>
+</body>
+      </html>
