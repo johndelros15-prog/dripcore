@@ -28,7 +28,7 @@ body {
 .logo h1 {
   font-weight: 700;
   font-size: 1.8rem;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #c9a227, #f3d78a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -148,7 +148,7 @@ body {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #008a00, #00cc00);
   color: #fff;
   border: none;
   padding: 14px 24px;
